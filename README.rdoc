@@ -1,0 +1,25 @@
+= How to make CUI screenshot program for Android SDK
+
+ $ cd ~
+ $ mkdir gingerbread
+ $ cd gingerbread
+ $ repo init -u git://android.git.kernel.org/platform/manifest.git -b gingerbread
+ $ repo sync
+
+   path to ddmlib
+   ~gingerbread/sdk/ddms/libs/ddmlib/src/com/android/ddmlib
+ 
+   path to Screenshot class(Screenshot.java)
+   ~gingerbread/sdk/screenshot/src/com/android/screenshot/Screenshot.java     
+ 
+ $ cd ~
+ $ mkdir screenshot
+ $ cd screenshot
+ $ cp -r ~gingerbread/sdk/ddms/libs/ddmlib/src/com .
+ $ cp -r ~gingerbread/sdk/screenshot/src/com .
+ $ javac javac com/android/screenshot/Screenshot.java
+ 
+ $ cd ~/screenshot
+ $ java com.android.screenshot.Screenshot -d -l ~/Desktop/screenshot.png
+
+
